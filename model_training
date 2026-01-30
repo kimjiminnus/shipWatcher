@@ -8,6 +8,7 @@ from data_preprocessing import train_images, train_labels, val_images, val_label
 from PIL import Image
 
 device = torch.device("mps")
+class_list = ["empty", "person", "vehicle"]
 
 # Transforms for images
 pic_transform = transforms.Compose([transforms.Resize((224, 224)),
