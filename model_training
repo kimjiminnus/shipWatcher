@@ -3,8 +3,8 @@ import torch.nn as nn
 import torch.optim as optim
 import torchvision.models as models
 import torchvision.transforms as transforms
-from torch.utils.data import Dataset, DataLoader
-from data_preprocessing import train_images, train_labels, val_images, val_labels
+from torch.utils.data import DataLoader
+from data_preprocessing import Data, train_images, train_labels, val_images, val_labels
 from PIL import Image
 
 device = torch.device("mps")
@@ -25,22 +25,6 @@ def get_shipWatcher():
     input_size = model.fc.in_features
     model.fc = nn.Linear(input_size,3)
     return model
-
-
-class Data(Dataset):
-    def __init__(self, dataset, transform=None):
-        self.x = dataset[0]
-        self.y = dataset[1]
-        self.transform = transform
-        self.len = len(dataset[0])
-
-    def __getitem__(self, index):
-        x = self.transform(Image.open(self.x[index]).convert("RGB"))
-        y = self.y[index]
-        return x, y
-
-    def __len__(self):
-        return self.len
 
 
 # Step 3: Create objects with selected hyperparameters for training
