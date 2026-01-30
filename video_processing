@@ -1,9 +1,9 @@
 import torch
 import cv2
 from PIL import Image
-from Model_creation import pic_transform
-from Model_creation import get_shipWatcher
-from Model_creation import class_list
+from model_training import pic_transform
+from model_training import get_shipWatcher
+from model_training import class_list
 
   
 device = torch.device("mps")
