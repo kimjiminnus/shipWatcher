@@ -1,12 +1,13 @@
 ## The shipWatcher
 This is my first Machine Learning(Computer Vision) project using **PyTorch**, and aims to detect unidentified personnel / vehicle approaching a warship at night.
 This project is based on my personal experiences as a conscript in the Korean Navy, and aims to solve a problem that fellow crew and I suffered from.
+Having started studying ML during my service, I find it meaningful to end it by helping those who protect our country to this day.
 
 ## Description of project
-In the Navy, Gangway Watch was one of the most dreaded task, where the Gangway was to be guarded 24/7 by 2 people in rotational shifts.
-During the fully manual 8-hour duty, my crew and I would suffer from Alert Fatigue due to regular false alarms and impromptu patrols by officers on-duty.
-This inefficient system would often cause those on-duty to be unable to detect actual threats when required.
-I first started studying ML during my service, and I found it meaningful to end it with a project that helps those who sacrifice so much to protect our country to this day.
+In the Navy, Gangway Watch is one of the most dreaded tasks, where 2 people guard the Gangway 24/7 in rotational shifts.
+During the fully manual 8-hour shifts, my crew and I would suffer from Alert Fatigue due to constant false alarms and psychological strains.
+This inefficient system was prone to human error, causing the inability to detect actual threats when it actually mattered most.
+Thus, this project has the reduction of the False Positive rate as its top priority, and will be evaluated using ROC curves and AUC scores.
 
 ## Current Status: Training & Data Collection**
 This project is currently in the **active development phase**. 
@@ -36,9 +37,18 @@ shipWatcher/
 │       ├── Empty/
 │       ├── Person/
 │       └── Vehicle/
-├── models/             # Where 'shipWatcher.pth' will be saved
-├── src/                # Source code (train.py, inference.py, data_preprocessing.py, tune_hyperparams.py, video.processing.py)
-└── requirements.txt
+├── src/                # Source code
+│   ├── __init__.py          
+│   ├── utils.py               # Contains device_configuration, image_transform, class_list
+│   ├── data_preprocessing.py  # Logic for sorting and creating training & validation datasets
+│   ├── model_def.py           # get_shipWatcher(): ResNet-18 architecture definition 
+│   ├── train.py               # Script for training, validating model from scratch using prepared data
+│   ├── tune_hyperparams.py    # Script for training, validating model using various types of hyperparameters and values
+│   ├── video_processing.py    # Script for using model to analyse videos / live feeds
+│   └── inference.py           # Script for testing model on user-selected images
+└── requirements.txt    # List of necessary libraries (PyTorch, Pillow, etc.) 
+└── models/
+    └── shipWatcher.pth        # Contains state_dict of optimal model
 ```
 
 ### 3. Training shipwatcher from scratch & saving state_dict
