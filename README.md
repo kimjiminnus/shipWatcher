@@ -1,12 +1,12 @@
 ## The shipWatcher
-My first Machine Learning(Computer Vision) project using **PyTorch** to detect unidentified personnel / vehicle approaching a Navy vessel at night.
-This project aims to solve a problem that I, and many others in the Navy today still suffer from -- Gangway Watch.
+This is my first Machine Learning(Computer Vision) project using **PyTorch**, and aims to detect unidentified personnel / vehicle approaching a warship at night.
+This project is based on my personal experiences as a conscript in the Korean Navy, and aims to solve a problem that fellow crew and I suffered from.
 
 ## Description of project
-I served in the Republic of Korea Navy onboard a Guided-missile Frigate for 20 months as a conscript.
-One of the most tiring tasks was Gangway Watch, a naval tradition where the gangway was to be guarded 24/7 by 2 crew with rotating shifts. 
-Watching my surroundings intensely at 3am to not get caught on surprise by the fleet's officer on-duty on his impromptu patrols took a huge toll on my body.
-I first started learning ML in the Navy, and I thought it would be meaningful to end my service with a project that captured my personal experiences.
+In the Navy, Gangway Watch was one of the most dreaded task, where the Gangway was to be guarded 24/7 by 2 people in rotational shifts.
+During the fully manual 8-hour duty, my crew and I would suffer from Alert Fatigue due to regular false alarms and impromptu patrols by officers on-duty.
+This inefficient system would often cause those on-duty to be unable to detect actual threats when required.
+I first started studying ML during my service, and I found it meaningful to end it with a project that helps those who sacrifice so much to protect our country to this day.
 
 ## Current Status: Training & Data Collection**
 This project is currently in the **active development phase**. 
