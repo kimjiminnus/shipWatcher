@@ -4,7 +4,7 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 from PIL import Image
 from pathlib import Path
-from src.utils import device, class_list, pic_transform, get_shipWatcher()
+from src.utils import device, class_list, pic_transform, get_shipWatcher
 
 
 # 1. The Prediction Engine
