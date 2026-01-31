@@ -1,11 +1,11 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.data import DataLoader, Dataset
 import torchvision.models as models
 import torchvision.transforms as transforms
+from torch.utils.data import DataLoader, Dataset
 from PIL import Image
-from src.data_preprocessing import train_images, train_labels, val_images, val_labels
+from src.data_preprocessing import train_samples, val_samples
 from src.utils import device, class_list, pic_transform, get_shipWatcher
 
 
@@ -34,8 +34,8 @@ def prepare_and_train(epochs, lr, weight_decay, betas):
     shipWatcher = shipWatcher.to(device)
     criterion = nn.CrossEntropyLoss()
     optimiser = optim.Adam(shipWatcher.fc.parameters(), lr=lr, weight_decay=weight_decay, betas=betas)
-    train_dataset = Data([train_images, train_labels], transform=pic_transform)
-    val_dataset = Data([val_images, val_labels], transform=pic_transform)
+    train_dataset = Data(train_samples(), transform=pic_transform)
+    val_dataset = Data(val_samples(), transform=pic_transform)
     train_loader = DataLoader(dataset=train_dataset, batch_size=5, shuffle=True)
     val_loader = DataLoader(dataset=val_dataset, batch_size=5)
 
