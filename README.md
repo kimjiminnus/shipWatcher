@@ -37,7 +37,9 @@ shipWatcher/
 │       ├── Empty/
 │       ├── Person/
 │       └── Vehicle/
-├── src/                # Source code
+├──models/
+│   └── shipWatcher.pth        # Contains state_dict of optimal model
+├── src/
 │   ├── __init__.py          
 │   ├── utils.py               # Contains device_configuration, image_transform, class_list
 │   ├── data_preprocessing.py  # Logic for sorting and creating training & validation datasets
@@ -47,8 +49,6 @@ shipWatcher/
 │   ├── video_processing.py    # Script for using model to analyse videos / live feeds
 │   └── inference.py           # Script for testing model on user-selected images
 └── requirements.txt    # List of necessary libraries (PyTorch, Pillow, etc.) 
-└── models/
-    └── shipWatcher.pth        # Contains state_dict of optimal model
 ```
 
 ### 3. Training shipwatcher from scratch & saving state_dict
