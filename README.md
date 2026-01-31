@@ -18,11 +18,14 @@ I am focusing on improving model accuracy by
 
 ### 1. Installation
 Clone the repository and install the required dependencies:
+```bash
 git clone https://github.com/kimjiminnus/shipWatcher.git
 cd shipWatcher
 pip install -r requirements.txt
+```
 
 ### 2. Local file organisation structure
+```bash
 shipWatcher/
 ├── data/
 │   ├── train/          # Training Images
@@ -35,12 +38,17 @@ shipWatcher/
 │       └── Vehicle/
 ├── models/             # Where 'shipWatcher.pth' will be saved
 └── src/                # Source code (train.py, inference.py, data_preprocessing.py, tune_hyperparams.py, video.processing.py)
+```
 
 ### 3. Training shipwatcher from scratch & saving state_dict
+```bash
 python src/train.py
+```
 
 ### 4. Testing your own image files on the shipWatcher 
+```bash
 python src/inference.py
+```
 
 
 ## The Tech Stack
