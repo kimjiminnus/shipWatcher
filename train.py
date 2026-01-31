@@ -6,7 +6,7 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 from PIL import Image
 from src.data_preprocessing import train_images, train_labels, val_images, val_labels
-from src.utils import device, class_list, pic_transform
+from src.utils import device, class_list, pic_transform, get_shipWatcher
 
 
 # Create custom PyTorch dataset implementation utilising "lazy loading" for memory-efficient data pipelining
