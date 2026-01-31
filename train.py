@@ -6,15 +6,7 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 from PIL import Image
 from src.data_preprocessing import train_images, train_labels, val_images, val_labels
-device = torch.device("mps")
-
-
-# Transform composition for images
-
-pic_transform = transforms.Compose([transforms.Resize((224, 224)),
-                                    transforms.ToTensor(),
-                                    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
-class_list = ["empty", "person", "vehicle"]
+from src.utils import device, class_list, pic_transform
 
 
 # Create custom PyTorch dataset implementation utilising "lazy loading" for memory-efficient data pipelining
@@ -33,18 +25,6 @@ class Data(Dataset):
 
     def __len__(self):
         return self.len
-
-
-# Initialise ResNet-18 with pre-trained weights as a feature extractor
-# Modify full connected(fc) layer with nn.Linear for 3-class classification
-
-def get_shipWatcher():
-    model = models.resnet18(weights="DEFAULT")
-    for param in model.parameters():
-        param.requires_grad = False
-    input_size = model.fc.in_features
-    model.fc = nn.Linear(input_size,3)
-    return model
 
 
 # Define function for training, validating shipWatcher model with certain hyperparameters
