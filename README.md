@@ -18,7 +18,6 @@ I am focusing on improving model accuracy by
 
 ### 1. Installation
 Clone the repository and install the required dependencies:
-bash'''
 git clone https://github.com/kimjiminnus/shipWatcher.git
 cd shipWatcher
 pip install -r requirements.txt
@@ -36,7 +35,6 @@ shipWatcher/
 │       └── Vehicle/
 ├── models/             # Where 'shipWatcher.pth' will be saved
 └── src/                # Source code (train.py, inference.py, data_preprocessing.py, tune_hyperparams.py, video.processing.py)
-'''
 
 ### 3. Training shipwatcher from scratch & saving state_dict
 python src/train.py
