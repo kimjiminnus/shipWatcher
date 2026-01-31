@@ -1,10 +1,11 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from torch.utils.data import DataLoader, Dataset
 import torchvision.models as models
 import torchvision.transforms as transforms
+from PIL import Image
 from data_preprocessing import Data, train_images, train_labels, val_images, val_labels
-from torch.utils.data import DataLoader
 
 
 # Transform composition for images
@@ -12,6 +13,25 @@ from torch.utils.data import DataLoader
 pic_transform = transforms.Compose([transforms.Resize((224, 224)),
                                     transforms.ToTensor(),
                                     transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
+
+
+# Create custom PyTorch dataset implementation utilising "lazy loading" for memory-efficient data pipelining
+
+class Data(Dataset):
+    def __init__(self, dataset, transform=None):
+        self.x = dataset[0]
+        self.y = dataset[1]
+        self.transform = transform
+        self.len = len(dataset[0])
+
+    def __getitem__(self, index):
+        x = self.transform(Image.open(self.x[index]).convert("RGBA").convert("RGB"))
+        y = self.y[index]
+        return x, y
+
+    def __len__(self):
+        return self.len
+
 
 # Initialise ResNet-18 with pre-trained weights as a feature extractor
 # Modify full connected(fc) layer with nn.Linear for 3-class classification
