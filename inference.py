@@ -4,31 +4,10 @@ import torchvision.models as models
 import torchvision.transforms as transforms
 from PIL import Image
 from pathlib import Path
+from src.utils import device, class_list, pic_transform, get_shipWatcher()
 
 
-# 1. Setup Device and Labels 
-device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
-class_list = ["empty", "person", "vehicle"]
-
-# 2. Consistent transforms for images
-pic_transform = transforms.Compose([transforms.Resize((224, 224)),
-                                    transforms.ToTensor(),
-                                    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
-
-
-# 3. Model Architecture
-def get_shipWatcher():
-    model = models.resnet18(weights="DEFAULT")
-    for param in model.parameters():
-        param.requires_grad = False
-
-    # Change fc layer
-    input_size = model.fc.in_features
-    model.fc = nn.Linear(input_size,3)
-    return model
-
-
-# 4. The Prediction Engine
+# 1. The Prediction Engine
 @torch.no_grad()
 def predict(image_path, model_path):
     # Initialise and load model with saved state_dict
@@ -51,7 +30,7 @@ def predict(image_path, model_path):
     return class_list[index], confidence.item()
 
 
-# 5. Execution Block
+# 2. Execution Block
 if __name__ == "__main__":
     # Define paths of test_image, shipWatcher model
     shipWatcher_pth = "shipWatcher.pth" 
