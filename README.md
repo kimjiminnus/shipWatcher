@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ### 2. Local file organisation structure
 ```bash
 shipWatcher/
-├── data/
+├── data/               # DISCLAIMER: Image Datasets will only be uploaded once enough images that can appropriately capture the high-noise port environment are found
 │   ├── train/          # Training Images
 │   │   ├── Empty/
 │   │   ├── Person/
