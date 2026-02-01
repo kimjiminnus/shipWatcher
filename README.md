@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ```bash
 shipWatcher/
 ├── data/
-│   ├── train/          # Training Images
+│   ├── train/          # Training Images  utils.py               # Contains device_configuration, image_transform, class_list
 │   │   ├── Empty/
 │   │   ├── Person/
 │   │   └── Vehicle/
@@ -40,14 +40,14 @@ shipWatcher/
 ├──models/
 │   └── shipWatcher.pth        # Contains state_dict of optimal model
 ├── src/
-│   ├── __init__.py          
-│   ├── utils.py               # Contains device_configuration, image_transform, class_list
-│   ├── data_preprocessing.py  # Logic for sorting and creating training & validation datasets
+│   ├── __init__.py
+│   ├── data_preprocessing.py  # Logic for sorting and creating training & validation datasets       
+│   ├── inference.py           # Script for testing model on user-selected images
 │   ├── model_def.py           # get_shipWatcher(): ResNet-18 architecture definition 
 │   ├── train.py               # Script for training, validating model from scratch using prepared data
 │   ├── tune_hyperparams.py    # Script for training, validating model using various types of hyperparameters and values
-│   ├── video_processing.py    # Script for using model to analyse videos / live feeds
-│   └── inference.py           # Script for testing model on user-selected images
+│   ├── utils.py               # Contains device_configuration, image_transform, class_list
+│   └── video_processing.py    # Script for using model to analyse videos / live feeds
 └── requirements.txt    # List of necessary libraries (PyTorch, Pillow, etc.) 
 ```
 
