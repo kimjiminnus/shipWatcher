@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ```bash
 shipWatcher/
 ├── data/
-│   ├── train/          # Training Images  utils.py               # Contains device_configuration, image_transform, class_list
+│   ├── train/          # Training Images
 │   │   ├── Empty/
 │   │   ├── Person/
 │   │   └── Vehicle/
