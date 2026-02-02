@@ -7,7 +7,7 @@ Having started studying ML during my service, I find it meaningful to end it by 
 In the Navy, Gangway Watch is one of the most dreaded tasks, where 2 people guard the Gangway 24/7 in rotational shifts.
 During the fully manual 8-hour shifts, my crew and I would suffer from Alert Fatigue due to constant false alarms and psychological strains.
 This inefficient system was prone to human error, causing the inability to detect actual threats when it actually mattered most.
-This end-to-end Modular ML pipeline has the reduction of the False Positive rate as its top priority, and will be evaluated using ROC curves and AUC scores.
+Therefore, this project has the reduction of the False Positive rate as its top priority, and will be evaluated using ROC curves and AUC scores.
 
 ## Current Status: Training & Data Collection**
 This project is currently in the **active development phase**. 
