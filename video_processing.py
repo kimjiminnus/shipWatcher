@@ -47,5 +47,25 @@ def process_video(video_path, skip_frames = 30):
     cv2.destroyAllWindows()
 
 
+def process_liveFeed(skip_frames = 30):
+    cap = cv2.VideoCapture(0)
+    frame_count = 0
+    if not cap.isOpened():
+        print("Error: Could not open video")
+        return
+    else:
+        print("Processing video... Press 'q' to stop.")
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            print("Video processing finished")
+            break
+        if frame_count % skip_frames == 0:
+            process_frame(frame)
+        frame_count += 1
+    cap.release()
+    cv2.destroyAllWindows()
+
+
 
 
