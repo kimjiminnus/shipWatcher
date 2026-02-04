@@ -3,9 +3,6 @@ from src.train import prepare_and_train
 from src.model_def import get_shipWatcher
 from src.utils import device
 
-shipWatcher = get_shipWatcher()
-shipWatcher = shipWatcher.to(device)
-
 lr_list = [0.0005, 0.001, 0.003, 0.005]
 weight_decay_list = [0.0005, 0.001, 0.005]
 
