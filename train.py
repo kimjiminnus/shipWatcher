@@ -61,7 +61,7 @@ def prepare_and_train(epochs, lr, weight_decay, betas):
                 y = y.to(device)
                 yhat = shipWatcher(x)
                 val_accuracy += (torch.argmax(yhat, dim=1)==y).sum().item()
-        print(f"{val_accuracy}/{len(val_images)}")
+        print(f"{val_accuracy}/{len(val_samples()[1])}")
         if epoch+1 == epochs:
             return train_loss, val_accuracy, shipWatcher.state_dict()
         else:
