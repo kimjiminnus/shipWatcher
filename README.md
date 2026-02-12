@@ -1,12 +1,12 @@
 ## The shipWatcher
-This is my first Machine Learning(Computer Vision) project using **PyTorch**, and is an End-to-End Modular ML Pipeline that aims to detect and identify unidentified personnel / vehicle approaching a warship at night.
+Deep Learning(Computer Vision) project using **PyTorch**, and is an End-to-End Modular Pipeline that aims to detect and identify unidentified personnel / vehicle approaching a warship at night.
 It is based on my personal experiences as a conscript in the Korean Navy, and aims to solve a problem that fellow crew and I suffered from.
 Having started studying ML during my service, I find it meaningful to end it by helping those who protect our country to this day.
 
 ## Description of project
 In the Navy, Gangway Watch is one of the most dreaded tasks, where 2 people guard the Gangway 24/7 in rotational shifts.
 During the fully manual 8-hour shifts, my crew and I would suffer from Alert Fatigue due to constant false alarms and psychological strains.
-This inefficient system was prone to human error, causing the inability to detect actual threats when it actually mattered most.
+This inefficient system is prone to human error, causing the inability to detect actual threats when it actually mattered most.
 Therefore, this project has the reduction of the False Positive Rate (FPR) as its top priority, and will be evaluated using ROC curves and AUC scores.
 
 ## Current Status: Training & Data Collection**
@@ -15,7 +15,7 @@ I am focusing on improving model accuracy by
 * Addressing domain gaps between web-scraped images and real-world video frames
 * Training models with images of various weather conditions that a Naval Base is susceptible to due to its proximity to the sea.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Installation
 Clone the repository and install the required dependencies:
@@ -62,13 +62,13 @@ python src/inference.py
 ```
 
 
-## The Tech Stack
+## Tech Stack
 * **Language:** Python 3.x
 * **Framework:** PyTorch
 * **Computer Vision:** Torchvision, OpenCV
 * **Model:** ResNet-18 with a customised 3-neuron output layer (Transfer Learning)
 
-## Challenges I'm Solving
+## Challenges being faced
 * **Data Scarcity:** Finding suitable datasets of images in a Naval Base proves to be challenging due to Operational Security(OPSEC)
 * **Class Imbalance:** My "Empty" class is smaller than "Vehicle" or "Person." I am implementing **Weighted Random Sampling** to prevent model bias.
 * **Accuracy:** Current accuracy is limited by background noise. I am working on **Hard Negative Mining** to reduce false positives on poles and shadows.
