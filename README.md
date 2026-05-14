@@ -9,12 +9,6 @@ During the fully manual 8-hour shifts, my crew and I would suffer from Alert Fat
 This inefficient system is prone to human error, causing the inability to detect actual threats when it actually mattered most.
 Therefore, this project has the reduction of the False Positive Rate (FPR) as its top priority, and will be evaluated using ROC curves and AUC scores.
 
-## Current Status: Training & Data Collection**
-This project is currently in the **active development phase**. 
-I am focusing on improving model accuracy by 
-* Addressing domain gaps between web-scraped images and real-world video frames
-* Training models with images of various weather conditions that a Naval Base is susceptible to due to its proximity to the sea.
-
 ## Getting Started
 
 ### 1. Installation
@@ -68,12 +62,4 @@ python src/inference.py
 * **Computer Vision:** Torchvision, OpenCV
 * **Model:** ResNet-18 with a customised 3-neuron output layer (Transfer Learning)
 
-## Challenges being faced
-* **Data Scarcity:** Finding suitable datasets of images in a Naval Base proves to be challenging due to Operational Security(OPSEC)
-* **Class Imbalance:** My "Empty" class is smaller than "Vehicle" or "Person." I am implementing **Weighted Random Sampling** to prevent model bias.
-* **Accuracy:** Current accuracy is limited by background noise. I am working on **Hard Negative Mining** to reduce false positives on poles and shadows.
 
-## 🚀 Future Roadmap
-1. Once the model is trained with appropriate data and validated & tested on saved videos, adjust cv2.VideoCapture parameter to process live video feed.
-2. Implement a Confusion Matrix for better error analysis.
-3. Export to CoreML and Streamlit to share & deploy model.
