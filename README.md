@@ -1,7 +1,6 @@
 ## The shipWatcher
 Deep Learning(Computer Vision) project using **PyTorch**, and is an End-to-End Modular Pipeline that aims to detect and identify unidentified personnel / vehicle approaching a warship at night.
 It is based on my personal experiences as a conscript in the Korean Navy, and aims to solve a problem that fellow crew and I suffered from.
-Having started studying ML during my service, I find it meaningful to end it by helping those who protect our country to this day.
 
 ## Description of project
 In the Navy, Gangway Watch is one of the most dreaded tasks, where 2 people guard the Gangway 24/7 in rotational shifts.
