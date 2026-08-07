@@ -1,12 +1,11 @@
 ## The shipWatcher
-Deep Learning(Computer Vision) project using **PyTorch**, and is an End-to-End Modular Pipeline that aims to detect and identify unidentified personnel / vehicle approaching a warship at night.
-It is based on my personal experiences as a conscript in the Korean Navy, and aims to solve a problem that fellow crew and I suffered from.
+The shipWatcher is a Computer Vision image classification project using **PyTorch**, with an end-to-end modular pipeline that detects and identifies unidentified personnel / vehicle approaching a warship at night.
+It is based on my experiences as a conscript in the Korean Navy guarding the gangway during Watch Duty.
 
 ## Description of project
-In the Navy, Gangway Watch is one of the most dreaded tasks, where 2 people guard the Gangway 24/7 in rotational shifts.
-During the fully manual 8-hour shifts, my crew and I would suffer from Alert Fatigue due to constant false alarms and psychological strains.
-This inefficient system is prone to human error, causing the inability to detect actual threats when it actually mattered most.
-Therefore, this project has the reduction of the False Positive Rate (FPR) as its top priority, and will be evaluated using ROC curves and AUC scores.
+The port is a noisy environment where the surroundings aren't clear enough for human vision to identify objects accurately.
+A pre-trained ResNet-18 Model is fine-tuned to receive frames as input and classify it into one of [Empty, Person, Vehicle].
+This project aims to reduce the False Positive Rate (FPR) using ROC curves and AUC scores for evaluation 
 
 ## Getting Started
 
