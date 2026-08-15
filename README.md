@@ -8,7 +8,7 @@ A pre-trained ResNet-18 Model is fine-tuned to receive frames as input and class
 This project aims to reduce the False Positive Rate (FPR) using ROC curves and AUC scores for evaluation 
 
 
-### Project Structure
+## Project Structure
 ```bash
 shipWatcher/
 ├── data/               # DISCLAIMER: Image Datasets will only be uploaded once enough images that can appropriately capture the high-noise port environment are found
@@ -34,12 +34,12 @@ shipWatcher/
 └── requirements.txt    # List of necessary libraries (PyTorch, Pillow, etc.) 
 ```
 
-### Training shipwatcher from scratch & saving state_dict
+## Training shipwatcher from scratch & saving state_dict
 ```bash
 python src/train.py
 ```
 
-### Testing your own image files on the shipWatcher 
+## Testing your own image files on the shipWatcher 
 ```bash
 python src/inference.py
 ```
