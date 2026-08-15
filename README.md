@@ -7,17 +7,8 @@ The port is a noisy environment where the surroundings aren't clear enough for h
 A pre-trained ResNet-18 Model is fine-tuned to receive frames as input and classify it into one of [Empty, Person, Vehicle].
 This project aims to reduce the False Positive Rate (FPR) using ROC curves and AUC scores for evaluation 
 
-## Getting Started
 
-### 1. Installation
-Clone the repository and install the required dependencies:
-```bash
-git clone https://github.com/kimjiminnus/shipWatcher.git
-cd shipWatcher
-pip install -r requirements.txt
-```
-
-### 2. Local file organisation structure
+### Project Structure
 ```bash
 shipWatcher/
 ├── data/               # DISCLAIMER: Image Datasets will only be uploaded once enough images that can appropriately capture the high-noise port environment are found
