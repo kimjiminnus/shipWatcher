@@ -34,12 +34,12 @@ shipWatcher/
 └── requirements.txt    # List of necessary libraries (PyTorch, Pillow, etc.) 
 ```
 
-### 3. Training shipwatcher from scratch & saving state_dict
+### Training shipwatcher from scratch & saving state_dict
 ```bash
 python src/train.py
 ```
 
-### 4. Testing your own image files on the shipWatcher 
+### Testing your own image files on the shipWatcher 
 ```bash
 python src/inference.py
 ```
